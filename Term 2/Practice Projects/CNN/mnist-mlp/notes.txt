@@ -1,0 +1,38 @@
+MNIST model accuracy when changing its hyper-parameters:
+
+Original model : loss: 0.0350, acc: 0.9887, val_loss: 0.0986, val_acc: 0.9775, Test accuracy: 98.3400%
+
+1) Increase (or decrease) the number of nodes in each of the hidden
+layers. Do you notice evidence of overfitting (or underfitting)?
+
+A : Overfitting, loss: 0.0543, acc: 0.9869, val_loss: 0.1473, val_acc: 0.9740
+
+2) Increase (or decrease) the number of hidden layers. Do you notice
+evidence of overfitting (or underfitting)?
+
+A : Overfitting, loss: 0.0547, acc: 0.9860, val_loss: 0.1797, val_acc: 0.9722
+
+
+3) Remove the dropout layers in the network. Do you notice evidence of
+overfitting?
+
+A : Yes, loss: 0.0299 - acc: 0.9905 - val_loss: 0.0977 - val_acc: 0.9767
+
+Remove the ReLU activation functions. Does the accuracy decrease?
+
+A : Yes, loss: 0.3212, acc: 0.9095, val_loss: 0.2988, val_acc: 0.9184, Test accuracy: 91.7900%
+
+Remove the image pre-processing step with dividing every pixel by 255.
+Does the accuracy decrease?
+
+A : Yes, Test accuracy: 56.0800%
+
+Try a different optimizer, such as stochastic gradient descent.
+
+A : For SGD, Test accuracy: 93.3400% (Decreased)
+	For Adam, Test accuracy: 98.2000% (Almost same)
+
+Increase (or decrease) the batch size
+
+A : Increase (Batch Size = 5000) : Test accuracy: 96.2400% (Decreased)
+	Decrease (Batch Size = 10) : Test accuracy: 96.3000% (Decreased)
