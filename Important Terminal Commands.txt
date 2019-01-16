@@ -8,15 +8,30 @@
  	Press : Ctrl + C
 
 * To push changes form local repo to online repo:
-	1) git add .
-	2) git commit -m "Commit Message"
-	3) git push origin master
+
+	git add .
+	git commit -m "Commit Message"
+	git push origin master
 
 * To pull changes from online repo to local repo:
 	
 	git pull origin master
 
 * Upgrade all packages:
+
 pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
- 
+
+* Create a new repository on the command line:
+
+	echo "# sbc" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/uername/repo_name.git
+	git push -u origin master
+
+* Push an existing repository from the command line
+	
+	git remote add origin https://github.com/uername/repo_name.git
+	git push -u origin master
 
