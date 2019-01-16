@@ -7,7 +7,7 @@
 * To close running jupyter notebook servers:
  	Press : Ctrl + C
 
-* To push changes form local repo to online repo:
+* To push changes form local repository to remote repository:
 
 	git add .
 	git commit -m "Commit Message"
@@ -17,9 +17,14 @@
 	
 	git pull origin master
 
-* Upgrade all packages:
+* Upgrade all packages(pip):
 
 pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+or
+
+pip install pip-review
+pip-review --local --interactive
 
 * Create a new repository on the command line:
 
@@ -30,8 +35,13 @@ pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n
 	git remote add origin https://github.com/uername/repo_name.git
 	git push -u origin master
 
-* Push an existing repository from the command line
+* Push an existing repository from the command line:
 	
 	git remote add origin https://github.com/uername/repo_name.git
 	git push -u origin master
+
+* To tell GitHub who you are to make commits:
+	
+	git config --global user.email "you@example.com"
+  	git config --global user.name "Your Name"
 
