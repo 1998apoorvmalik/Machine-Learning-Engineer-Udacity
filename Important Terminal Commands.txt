@@ -45,3 +45,55 @@ pip-review --local --interactive
 	git config --global user.email "you@example.com"
   	git config --global user.name "Your Name"
 
+* To remove existing file from the repository(E.g : .DS_Store, or other system files):
+	
+	find . -name "file_name" -print0 | xargs -0 git rm -f --ignore-unmatch
+	
+(Note that -f which is force removal (from remote as well as local) can be 
+replaced with --cached (which does not affect local repository)
+
+Or to remove single file-
+
+git rm file1.txt
+git commit -m "remove file1.txt"
+
+But if you want to remove the file only from the Git repository and not remove it from the filesystem, use:
+
+git rm --cached file1.txt
+git commit -m "remove file1.txt"
+
+* To add new file to GitHub repository:
+
+	git add "File name"
+
+* To add new line to a file using terminal:
+
+	echo "New line" >> "file name"
+
+* To set global .gitignore:
+
+	cd ~
+	touch .gitignore_global
+	git config --global core.excludesfile ~/.gitignore_global
+
+* Some points about VIM:
+
+	1) Enter your message following the presented guidelines
+	2) Press Esc to make sure you are out of the insert mode
+	3) Then type :wq + Enter or ZZ (To get out of VIM)
+
+* To download files from server using SSH:
+
+In your terminal, type:
+
+	scp your_username@remotehost.edu:foobar.txt /local/dir
+
+replacing the username, host, remote filename, and local directory as appropriate.
+
+If you want to access EC2 (or other service that requires authenticating with a private key), use the -i option:
+
+	scp -i key_file.pem your_username@remotehost.edu:/remote/dir/foobar.txt /local/dir
+
+* GitHub : Sync local repository with remote one:
+
+	git fetch --prune
