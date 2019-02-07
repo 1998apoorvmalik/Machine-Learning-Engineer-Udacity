@@ -96,4 +96,6 @@ If you want to access EC2 (or other service that requires authenticating with a 
 
 * GitHub : Sync local repository with remote one:
 
-	git fetch --prune
+	git fetch origin
+	git reset --hard origin/master
+	git clean -f -d
